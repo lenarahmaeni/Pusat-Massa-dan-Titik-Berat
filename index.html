@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 7 - Pusat Massa & Titik Berat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2> Pusat Massa &amp; Titik Berat </h2>
+
+    <div class="panel-angka">
+        <label>Massa 1 (Kiri): <input type="number" id="m1" value="3" min="0.5" step="0.5"></label>
+        <label>Posisi X1 (cm): <input type="number" id="x1" value="-15" step="0.5"></label>
+        <label>Massa 2 (Kanan): <input type="number" id="m2" value="4" min="0.5" step="0.5"></label>
+        <label>Posisi X2 (cm): <input type="number" id="x2" value="15" step="0.5"></label>
+        <button type="button" onclick="terapkanNilai()">Terapkan</button>
+        <button type="button" onclick="setSeimbang()">Seimbangkan</button>
+    </div>
+
+    <canvas id="simulationCanvas" width="800" height="450"></canvas>
+
+    <div class="info">
+        <p id="statusText">Titik kuning = <strong>Pusat Massa / Titik Berat</strong>. Segitiga abu-abu = <strong>Titik Tumpu</strong>. Jika Pusat Massa berada tepat di atas Titik Tumpu, sistem dalam kondisi <strong>SEIMBANG</strong>.</p>
+        <p id="coordText"></p>
+    </div>
+
+    <div class="modul-rumus">
+        <h3>Modul Formulasi &amp; Analisis Perhitungan</h3>
+        <div class="rumus-box">
+            <strong>Rumus Pusat Massa:</strong> X<sub>cm</sub> = (m<sub>1</sub> &middot; x<sub>1</sub> + m<sub>2</sub> &middot; x<sub>2</sub>) / (m<sub>1</sub> + m<sub>2</sub>)<br>
+            <strong>Syarat Seimbang:</strong> X<sub>cm</sub> = 0 cm &nbsp;|&nbsp; x<sub>2 seimbang</sub> = -(m<sub>1</sub> &middot; x<sub>1</sub>) / m<sub>2</sub>
+        </div>
+        <div class="analisis-box" id="analisisPerhitungan"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
